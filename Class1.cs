@@ -11,18 +11,26 @@ namespace Delegates_library
    
 }
 public class Len
+{
+    static string Length(string s)
     {
-        static string Length(string s)
-        {
-            string temp = "";
-            int i, j;
-            Console.WriteLine("Length String...");
-            for (j = 0, i = s.Length - 1;
-                i >= 0;i--, j++)
-                temp += s[i];
-            return temp;
-        }
+        string temp = "";
+        int i, j;
+        Console.WriteLine("Length String...");
+        for (j = 0, i = s.Length - 1;
+            i >= 0; i--, j++)
+            temp += s[i];
+        return temp;
+    }
+    static void Main(string[] args, string Anita)
+    {
+        delegate_method del = new delegate_method(Length);
+        string str;
+        del = new delegate_method(Length);
+        str = del("Hello" + Anita);
+        Console.WriteLine("Result is: " + str);
        
-        }
+    }
+}
     
 
